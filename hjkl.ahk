@@ -18,8 +18,17 @@ CapsLock & u::Send, {blind}{Escape}
 RShift & LShift::Send, {blind}{CapsLock} 
 LShift & RShift::Send, {blind}{CapsLock}
 
-CapsLock & <::AltTab
-CapsLock & >::ShiftAltTab
+CapsLock & <::ShiftAltTab
+CapsLock & >::AltTab
 
 CapsLock & Enter::Run Arch.exe
-CapsLock & \::Send !{f4}
+;CapsLock & \::Send !{f4}
+CapsLock & \:: WinClose, A
+
+CapsLock & Space::
+   WinGet MX, MinMax, A
+   If MX
+        WinRestore A
+   Else WinMaximize A
+
+#NoTrayIcon
