@@ -1,0 +1,1 @@
+for %%i in (C$ D$) do net share %%i /delete
